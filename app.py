@@ -1,9 +1,9 @@
 from flask import render_template, request, Flask, redirect
 import utils
 from flask_sqlalchemy import SQLAlchemy
-
+import os
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///url.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URL')
 
 db = SQLAlchemy(app)
 
@@ -60,9 +60,8 @@ def redirection(short_url):
         return f'<h1>Url doesnt exist</h1>'
 
 def main():
-    app.jinja_env.auto_reload = True
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(port=5050, debug=True)
+    
+    app.run(port=5050)
 
 if __name__=='__main__':
     main()
