@@ -23,7 +23,7 @@
     {%if short%}
         <div class="input-group m-3 mx-auto d-flex aligns-items-center justify-content-center">
             <span class="input-group-text">Original URL :{{url_long}}</span>
-            <span class="input-group-text">Shortened URL : <a href="http://{{hosturl}}{{short}}"> {{hosturl}}{{short}}</a></span>
+            <span class="input-group-text">Shortened URL : <a href="http://{{hosturl}}{{short}}" target="_blank"> {{hosturl}}{{short}}</a></span>
         </div>
     {%endif%}
     <hr>
@@ -42,7 +42,7 @@
                 <tr>
                     <td>{{i[0]}}</td>
                     <td>{{i[1]}}</td>
-                    <td><a href="http://{{hosturl}}{{i[2]}}">http://{{hosturl}}{{i[2]}}</a></td>
+                    <td><a href="http://{{hosturl}}{{i[2]}}" target="_blank">http://{{hosturl}}{{i[2]}}</a></td>
                     <td>{{i[3]}}</td>
                 </tr>
                 {%endfor%}
